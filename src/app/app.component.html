@@ -9,12 +9,14 @@
       <ul class="list-group">
         <div *ngIf="onlyOdd">
           <li
-                  class="list-group-item" [ngClass]="{odd: item%2 !==0}" *ngFor="let item of oddNumbers" [ngStyle]="{backgroundColor: item % 2 !==0 ? 'yellow': 'green'}">{{ item }}
+                  class="list-group-item" [ngClass]="{odd: item%2 !==0}" *ngFor="let item of oddNumbers"
+                  [ngStyle]="{backgroundColor: item % 2 !==0 ? 'yellow': 'green'}">{{ item }}
           </li>
         </div>
         <div *ngIf="!onlyOdd">
           <li
-                  class="list-group-item" [ngClass]="{odd: itemEven % 2 !==0}"  *ngFor="let itemEven of evenNumbers">{{ itemEven }}
+                  class="list-group-item" [ngClass]="{odd: itemEven % 2 !==0}" *ngFor="let itemEven of evenNumbers">{{
+            itemEven }}
           </li>
         </div>
       </ul>
@@ -40,6 +42,13 @@
 </table>
 <div *appUnless="onlyOdd">
   <li
-          class="list-group-item" [ngClass]="{odd: itemEven % 2 !==0}"  *ngFor="let itemEven of evenNumbers">{{ itemEven }}
+          class="list-group-item" [ngClass]="{odd: itemEven % 2 !==0}" *ngFor="let itemEven of evenNumbers">{{ itemEven
+    }}
   </li>
+  <div [ngSwitch]="value">
+    <p *ngSwitchCase="5">Value is 5</p>
+    <p *ngSwitchCase="15">Value is 15</p>
+    <p *ngSwitchDefault>Value is Default</p>
+  </div>
+
 </div>
